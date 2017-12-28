@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8">
     <title>Tom's Site</title>
+    <link href="index.css" rel="stylesheet" type="text/css"
   </head>
   <body>
     <p>Hello World!</p>
-    What is your name? <input type="text" id="nname" value ="">
-    <button onclick="myFunct()">Enter</button>
-    <p id="Demo"></p>
   </body>
+
+    <label for="Qname">What is your name? </label>
+    <input type="text" id="nname" name="Qname">
+    <button onclick="myFunct()">Enter</button>
+    <!--<input type="submit"value="Enter2">-->
+  
+  <p id="Demo"></p>
   <script>
-    console.log("Hi there!")
     function myFunct(){
       var x = document.getElementById('nname').value;
       document.getElementById('Demo').innerHTML = "Hello, " + x +"!";
-      document.getElementById('nname').value = ""
     }
   </script>
 
