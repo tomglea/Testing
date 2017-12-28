@@ -1,1 +1,6 @@
 html {background-color: lightblue}
+p {
+  background-color: black;
+  color:white;
+  display:inline;
+  }
