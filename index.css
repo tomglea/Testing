@@ -1,6 +1,52 @@
 html {background-color: lightblue}
-p {
-  background-color: black;
-  color:white;
-  display:inline;
-  }
+#Scoreboard{
+  width:150px;
+  height:70px;
+  border:5px solid red;
+  margin-right:60px;
+  float: right;
+}
+.PlayerName{
+  margin-left: 10px;
+  float: right;
+}
+.PScore{
+  font-size: 40px;
+  font-weight: bold;
+  align:center;
+}
+.CScore{
+  font-size: 40px;
+  font-weight: bold;
+  float:center;
+}
+
+#Buttons button{
+  margin-top:10px;
+}
+
+#Names{
+  width:4000px;
+  height:50px;
+  margin-left:150px;
+  float: left;
+}
+
+#Pictures img{
+  margin-left:100px;
+  margin-top:5px;
+  float:left;
+}
+
+.HNPlay{
+  margin-left: 55px;
+  margin-right:100px;
+  float: left;
+}
+
+#result{
+  width:150px;
+  height:150px;
+  margin-top:25px;
+  margin-right:50px;
+}

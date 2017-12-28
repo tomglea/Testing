@@ -7,19 +7,101 @@
   </head>
 
   <body>
-    <label for="Qname">What is your name? </label>
-    <input type="text" id="nname" name="Qname">
-    <button onclick="myFunct()">Enter</button>
-    <!--<input type="submit"value="Enter2">-->
-    <img src="taz.png" alt="Taz" align="Right">
-    <p id="Demo"></p>
+    <div id="Scoreboard">
+      <div class="PlayerName">Player
+        <div class="PScore">0</div>
+      </div>
+      <div class="PCName">Computer
+        <div class="CScore">0</div>
+      </div>
+      <img id="result">
+    </div>
+
+    <div id="Buttons">
+      <button onclick="Rock()">Rock</button>
+      <button onclick="Paper()">Paper</button>
+      <button onclick="Scissors()">Scissors</button>
+    </div>
+
+    <h1 id="Names">
+      <div class="HNPlay">Player</div>
+      <div class="HNComp">Computer</div>
+    </h1>
+
+    <br>
+
+    <div id="Pictures">
+      <img id="PChoice" src="rock.jpeg">
+      <img id="CChoice" src="paper.jpeg">
+    </div>
   </body>
 
   <script>
-    function myFunct(){
-      var x = document.getElementById('nname').value;
-      document.getElementById('Demo').innerHTML = "<br>Hello, " + x +"!";
+    function Rock(){
+      document.getElementById('PChoice').src = "rock.jpeg";
+      pround(0);
+      }
+
+    function Paper(){
+      document.getElementById('PChoice').src = "paper.jpeg";
+      pround(1);
+      }
+
+    function Scissors(){
+      document.getElementById('PChoice').src = "scissors.jpeg";
+      pround(2);
+      }
+
+    function pround(x){
+      var pcCh = Math.floor(Math.random ()*3);
+      var pNum = document.getElementsByClassName('PScore')[0].innerHTML;
+      var cNum = document.getElementsByClassName('CScore')[0].innerHTML;
+      console.log(pNum);
+      console.log(cNum);
+      if (pcCh==0){
+          document.getElementById('CChoice').src = "rock.jpeg";
+
+          if (x == 0){
+            document.getElementById('result').src = "tied.jpeg";
+          } else if (x == 1){
+            document.getElementById('result').src = "winner.png";
+            pNum++;
+          } else if (x == 2){
+            document.getElementById('result').src = "loser.png";
+            cNum++;
+          }
+          console.log("pcch is now 0");
+      } else if (pcCh==1){
+        document.getElementById('CChoice').src = "paper.jpeg";
+
+        if (x == 0){
+          document.getElementById('result').src = "loser.png";
+          cNum++;
+        } else if (x == 1){
+          document.getElementById('result').src = "tied.jpeg";
+        } else if (x == 2){
+          document.getElementById('result').src = "winner.png";
+          pNum++;
+        }
+        console.log("pcch is now 1");
+      } else if (pcCh==2){
+        document.getElementById('CChoice').src = "scissors.jpeg";
+
+        if (x == 0){
+          document.getElementById('result').src = "winner.png";
+          pNum++;
+        } else if (x == 1){
+          document.getElementById('result').src = "loser.png";
+          cNum++;
+        } else if (x == 2){
+          document.getElementById('result').src = "tied.jpeg";
+        }
+        console.log("pcch is now 2");
+      }
+      document.getElementsByClassName('PScore')[0].innerHTML=pNum;
+      document.getElementsByClassName('CScore')[0].innerHTML=cNum;
     }
+
   </script>
 
 </html>
